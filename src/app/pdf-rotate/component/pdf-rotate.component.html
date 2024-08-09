@@ -1,0 +1,30 @@
+<div>
+  <div id="title" class="text-center">
+    <h1 nz-typography><b>PDF Editor</b></h1>
+    <p class="text-lg">Your one stop PDF Editing Tools. Supports Rotate Pages, Moving pages, Delete Pages within PDF and Adding Watermark to PDF </p>
+  </div>
+
+  <nz-upload nzType="drag" [(nzFileList)]="fileList" nzAccept="application/pdf" [nzBeforeUpload]="onUploadFile">
+    <p class="ant-upload-drag-icon">
+      <i nz-icon nzType="inbox"></i>
+    </p>
+    <p class="ant-upload-text">Click or drag file to this area to upload</p>
+    <p class="ant-upload-hint">
+      Upload PDF file here
+    </p>
+  </nz-upload>
+  <div class="flex justify-content-center pt-2">
+    <nz-space>
+      <nz-space-item>
+        <button nz-button nzType="primary" (click)="onSubmitClick()" [disabled]="fileList.length<=0">Submit</button>
+      </nz-space-item>
+      <nz-space-item>
+        <button nz-button nzType="danger" (click)="onCancelClick()">Cancel</button>
+      </nz-space-item>
+    </nz-space>
+  </div>
+
+
+
+</div>
+
